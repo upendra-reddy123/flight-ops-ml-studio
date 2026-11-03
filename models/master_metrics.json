@@ -1,0 +1,452 @@
+{
+  "regression_benchmark": {
+    "Simple Linear Regression": {
+      "MAE": 31.03,
+      "RMSE": 39.38,
+      "R2": 0.0012
+    },
+    "Multiple Linear Regression": {
+      "MAE": 2.75,
+      "RMSE": 3.85,
+      "R2": 0.9904
+    },
+    "Polynomial Regression (Deg 2)": {
+      "MAE": 11.3,
+      "RMSE": 16.78,
+      "R2": 0.8187
+    },
+    "Ridge Regression (L2)": {
+      "MAE": 2.74,
+      "RMSE": 3.85,
+      "R2": 0.9904
+    },
+    "Lasso Regression (L1)": {
+      "MAE": 2.63,
+      "RMSE": 3.99,
+      "R2": 0.9898
+    },
+    "Support Vector Regressor (SVR)": {
+      "MAE": 0.59,
+      "RMSE": 1.1,
+      "R2": 0.9992
+    },
+    "Decision Tree Regressor": {
+      "MAE": 1.18,
+      "RMSE": 2.0,
+      "R2": 0.9974
+    },
+    "Random Forest Regressor": {
+      "MAE": 0.35,
+      "RMSE": 0.87,
+      "R2": 0.9995
+    }
+  },
+  "classification_benchmark": {
+    "Logistic Regression": {
+      "Accuracy": 90.83,
+      "Macro_F1": 90.46,
+      "Precision": 90.45,
+      "Recall": 90.47
+    },
+    "Linear Support Vector Classifier": {
+      "Accuracy": 91.2,
+      "Macro_F1": 90.91,
+      "Precision": 90.9,
+      "Recall": 91.12
+    },
+    "Kernel SVM (RBF Kernel)": {
+      "Accuracy": 96.27,
+      "Macro_F1": 96.1,
+      "Precision": 96.09,
+      "Recall": 96.1
+    },
+    "Decision Tree Classifier": {
+      "Accuracy": 99.86,
+      "Macro_F1": 99.85,
+      "Precision": 99.85,
+      "Recall": 99.84
+    },
+    "Random Forest Classifier": {
+      "Accuracy": 99.8,
+      "Macro_F1": 99.79,
+      "Precision": 99.8,
+      "Recall": 99.78
+    }
+  },
+  "unit1_model_selection": {
+    "bias_variance": {
+      "depths": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "train_errors": [
+        277.55,
+        85.95,
+        28.27,
+        11.88,
+        6.42,
+        3.27,
+        1.9,
+        1.14,
+        0.76,
+        0.52,
+        0.35,
+        0.23,
+        0.14,
+        0.08,
+        0.04,
+        0.02,
+        0.01,
+        0.01,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "test_errors": [
+        294.28,
+        87.53,
+        28.93,
+        12.3,
+        6.83,
+        4.05,
+        2.72,
+        2.01,
+        1.65,
+        1.55,
+        1.36,
+        1.23,
+        1.19,
+        1.23,
+        1.19,
+        1.17,
+        1.18,
+        1.17,
+        1.2,
+        1.23,
+        1.26
+      ],
+      "best_depth": 18
+    },
+    "cross_validation": {
+      "mae_scores": [
+        2.72,
+        2.7,
+        2.77,
+        2.74,
+        2.69
+      ],
+      "rmse_scores": [
+        3.77,
+        3.75,
+        3.85,
+        3.79,
+        3.71
+      ],
+      "r2_scores": [
+        0.9906,
+        0.991,
+        0.9902,
+        0.9904,
+        0.9913
+      ],
+      "mean_mae": 2.72,
+      "mean_rmse": 3.78,
+      "mean_r2": 0.9907
+    },
+    "tuning": {
+      "grid_best_params": {
+        "criterion": "gini",
+        "max_depth": 5,
+        "min_samples_leaf": 10,
+        "min_samples_split": 2
+      },
+      "grid_best_score": 99.77,
+      "random_best_params": {
+        "min_samples_split": 20,
+        "min_samples_leaf": 10,
+        "max_depth": 8,
+        "criterion": "gini"
+      },
+      "random_best_score": 99.77
+    }
+  },
+  "unit2_advanced_regression": {
+    "slr": {
+      "beta_0": 33.1086,
+      "beta_1": -0.0579
+    },
+    "mlr": {
+      "mae": 2.75,
+      "rmse": 3.85,
+      "r2": 0.9904,
+      "vif": [
+        {
+          "Feature": "arriving_flights",
+          "VIF": Infinity,
+          "Status": "High Collinearity (>10)"
+        },
+        {
+          "Feature": "departing_flights",
+          "VIF": Infinity,
+          "Status": "High Collinearity (>10)"
+        },
+        {
+          "Feature": "total_flights",
+          "VIF": Infinity,
+          "Status": "High Collinearity (>10)"
+        },
+        {
+          "Feature": "avg_arrival_delay",
+          "VIF": 28.98,
+          "Status": "High Collinearity (>10)"
+        },
+        {
+          "Feature": "weather_delay_factor",
+          "VIF": 5.34,
+          "Status": "Acceptable (<10)"
+        },
+        {
+          "Feature": "taxi_out_avg",
+          "VIF": 24.59,
+          "Status": "High Collinearity (>10)"
+        },
+        {
+          "Feature": "airport_capacity",
+          "VIF": 4.69,
+          "Status": "Acceptable (<10)"
+        },
+        {
+          "Feature": "runway_utilization",
+          "VIF": 18.41,
+          "Status": "High Collinearity (>10)"
+        },
+        {
+          "Feature": "hour_of_day",
+          "VIF": 1.32,
+          "Status": "Acceptable (<10)"
+        },
+        {
+          "Feature": "day_of_week",
+          "VIF": 1.01,
+          "Status": "Acceptable (<10)"
+        }
+      ]
+    },
+    "poly": {
+      "Degree 1": {
+        "R2": 0.8058,
+        "RMSE": 17.36,
+        "Num_Features": 2
+      },
+      "Degree 2": {
+        "R2": 0.8187,
+        "RMSE": 16.78,
+        "Num_Features": 5
+      },
+      "Degree 3": {
+        "R2": 0.8343,
+        "RMSE": 16.04,
+        "Num_Features": 9
+      }
+    },
+    "regularization": {
+      "ridge_r2": 0.9904,
+      "ridge_rmse": 3.85,
+      "lasso_r2": 0.9898,
+      "lasso_rmse": 3.99,
+      "lasso_retained": [
+        "avg_arrival_delay",
+        "weather_delay_factor",
+        "taxi_out_avg",
+        "runway_utilization"
+      ],
+      "lasso_zeroed": [
+        "arriving_flights",
+        "departing_flights",
+        "total_flights",
+        "airport_capacity",
+        "hour_of_day",
+        "day_of_week"
+      ]
+    }
+  },
+  "unit3_4_svm": {
+    "kernels": {
+      "linear": {
+        "Accuracy": 92.01,
+        "Support_Vectors": 3449
+      },
+      "poly": {
+        "Accuracy": 92.59,
+        "Support_Vectors": 4342
+      },
+      "rbf": {
+        "Accuracy": 95.52,
+        "Support_Vectors": 2782
+      }
+    },
+    "svr": {
+      "mae": 0.59,
+      "rmse": 1.1,
+      "r2": 0.9992
+    }
+  },
+  "unit5_decision_trees": {
+    "impurity": {
+      "parent_gini": 0.62,
+      "parent_entropy": 1.4855,
+      "split_gini": 0.4895,
+      "gini_gain": 0.1305
+    },
+    "pruning": {
+      "deep_train_acc": 100.0,
+      "deep_test_acc": 99.83,
+      "pruned_train_acc": 99.83,
+      "pruned_test_acc": 99.86
+    },
+    "feature_importance": [
+      {
+        "Feature": "taxi_out_avg",
+        "Importance": 0.5672
+      },
+      {
+        "Feature": "runway_utilization",
+        "Importance": 0.4328
+      },
+      {
+        "Feature": "hour_of_day",
+        "Importance": 0.0
+      },
+      {
+        "Feature": "day_of_week",
+        "Importance": 0.0
+      },
+      {
+        "Feature": "airport_capacity",
+        "Importance": 0.0
+      },
+      {
+        "Feature": "weather_delay_factor",
+        "Importance": 0.0
+      },
+      {
+        "Feature": "avg_arrival_delay",
+        "Importance": 0.0
+      },
+      {
+        "Feature": "total_flights",
+        "Importance": 0.0
+      },
+      {
+        "Feature": "departing_flights",
+        "Importance": 0.0
+      },
+      {
+        "Feature": "arriving_flights",
+        "Importance": 0.0
+      }
+    ],
+    "regression": {
+      "mae": 1.18,
+      "rmse": 2.0,
+      "r2": 0.9974
+    }
+  },
+  "unit6_random_forest": {
+    "oob": {
+      "tree_counts": [
+        10,
+        25,
+        50,
+        75,
+        100,
+        150,
+        200
+      ],
+      "oob_scores": [
+        98.81,
+        99.68,
+        99.71,
+        99.73,
+        99.7,
+        99.73,
+        99.73
+      ],
+      "test_scores": [
+        99.68,
+        99.77,
+        99.8,
+        99.8,
+        99.8,
+        99.8,
+        99.8
+      ]
+    },
+    "feature_importance": [
+      {
+        "Feature": "runway_utilization",
+        "Importance": 0.298
+      },
+      {
+        "Feature": "taxi_out_avg",
+        "Importance": 0.2853
+      },
+      {
+        "Feature": "avg_arrival_delay",
+        "Importance": 0.1722
+      },
+      {
+        "Feature": "weather_delay_factor",
+        "Importance": 0.1151
+      },
+      {
+        "Feature": "total_flights",
+        "Importance": 0.0472
+      },
+      {
+        "Feature": "departing_flights",
+        "Importance": 0.035
+      },
+      {
+        "Feature": "arriving_flights",
+        "Importance": 0.0221
+      },
+      {
+        "Feature": "hour_of_day",
+        "Importance": 0.0128
+      },
+      {
+        "Feature": "airport_capacity",
+        "Importance": 0.0113
+      },
+      {
+        "Feature": "day_of_week",
+        "Importance": 0.0009
+      }
+    ],
+    "regression": {
+      "mae": 0.77,
+      "rmse": 1.5,
+      "r2": 0.9986
+    }
+  }
+}
